@@ -1,0 +1,508 @@
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediTech - Techno Clubs</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-k5D0iNV0EfV6shcI9ib77gZla9vMYcwnwlA3q4dUSc+Njk1Q2O81drUnGS+F6FC7V+k9UlKHdYhUVRjtkKfKjw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="styles.css" rel="stylesheet"/>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+ </head>
+ <body class="bg-white text-gray-800">
+
+ <nav class="bg-blue-50 p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <!-- Hamburger Icon (only visible on mobile) -->
+      <button onclick="toggleMenu()">
+        <i class="fas fa-bars text-gray-800 text-2xl"></i>
+      </button>
+      <span class="text-cyan-500 font-bold text-2xl">MediTech</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center gap-4">
+      <a href="#home" class="text-gray-800 hover:text-orange-500 transition-colors">Home</a>
+      <a href="#popular-clubs" class="text-gray-800 hover:text-orange-500 transition-colors">Clubs</a>
+      <a href="#events" class="text-gray-800 hover:text-orange-500 transition-colors">Events</a>
+      <a href="chat.html" class="text-gray-800 hover:text-orange-500 transition-colors">Chat</a>
+      <button class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors">
+        Join Us
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden">
+    <div class="mt-4 px-4">
+      <a href="#home" class="block text-gray-800 hover:text-orange-500 transition-colors mb-2">Home</a>
+      <a href="#clubs" class="block text-gray-800 hover:text-orange-500 transition-colors mb-2">Clubs</a>
+      <a href="#events" class="block text-gray-800 hover:text-orange-500 transition-colors mb-2">Events</a>
+      <a href="chat.html" class="block text-gray-800 hover:text-orange-500 transition-colors mb-2">Chat</a>
+      <button class="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition-colors mt-4">
+        Join Us
+      </button>
+    </div>
+  </div>
+</nav>
+
+  <section class="hero bg-blue-40 text-left px-10 py-12" id="home">
+    <div class="hero-content">
+    </div> <!-- Add this closing div tag -->
+    <section class="hero-section flex justify-between bg-blue-40">
+      <div class="hero-content">
+        <h1>Where The Innovation Meets The Passion!</h1>
+        <p class="text-lg text-gray-700">Join us to innovate, collaborate, and push the boundaries of technology together.</p>
+      </div>
+
+      <!-- Right Circular Logo with Floating Circles -->
+      <div class="circle-container">
+        <div class="rotating-circles">
+        <div class="circle-rings">
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div> <!-- Add more for extra loops -->
+        </div>
+        </div>
+        <img src="Techno_Club_Logo.png" alt="Techno Club Logo" class="techno-logo">
+    
+        <!-- 5 Floating Circles -->
+        <span class="float-circle red"></span>
+        <span class="float-circle blue"></span>
+        <span class="float-circle orange"></span>
+        <span class="float-circle green"></span>
+        <span class="float-circle purple"></span>
+      </div>
+    </section>        
+  </section>
+<!--Upcoming eevnts-->
+<section class="px-10 py-10" id="events">
+  <h2 class="text-3xl font-bold mb-3">
+   Upcoming Events
+  </h2>
+  <p>Make your experience enjoyable with Techno Clubs!</p>
+  <br><br>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+   <div class="bg-gray-100 p-4 rounded-lg text-center" data-date="2025-03-25">
+    <img alt="Event 1 Image" class="mx-auto mb-4" src="https://placehold.co/100x100"/>
+    <h3 class="text-xl font-semibold">
+     Chakravyuh
+    </h3>
+    <p class="mt-2">
+     Date: 25th June
+    </p>
+    <button class="mt-2 bg-orange-500 text-white py-2 px-4 rounded">
+     Register
+    </button>
+   </div>
+   <div class="bg-gray-100 p-4 rounded-lg text-center" data-date="2025-03-27">
+    <img alt="Event 2 Image" class="mx-auto mb-4" src="https://placehold.co/100x100"/>
+    <h3 class="text-xl font-semibold">
+     Tech Roadies
+    </h3>
+    <p class="mt-2">
+     Date: 27th March
+    </p>
+    <button class="mt-2 bg-orange-500 text-white py-2 px-4 rounded">
+     Register
+    </button>
+   </div>
+   <div class="bg-gray-100 p-4 rounded-lg text-center" data-date="2025-07-05">
+    <img alt="Event 3 Image" class="mx-auto mb-4" src="https://placehold.co/100x100"/>
+    <h3 class="text-xl font-semibold">
+     AI Workshop
+    </h3>
+    <p class="mt-2">
+     Date: 5th July
+    </p>
+    <button class="mt-2 bg-orange-500 text-white py-2 px-4 rounded">
+     Register
+    </button>
+   </div>
+   <div class="bg-gray-100 p-4 rounded-lg text-center" data-date="2025-07-10">
+    <img alt="Event 4 Image" class="mx-auto mb-4" src="https://placehold.co/100x100"/>
+    <h3 class="text-xl font-semibold">
+     Tech Robotics
+    </h3>
+    <p class="mt-2">
+     Date: 10th July
+    </p>
+    <button class="mt-2 bg-orange-500 text-white py-2 px-4 rounded">
+     Register
+    </button>
+   </div>
+  </div>
+ </section>
+
+  <section class="px-10 py-10" id="popular-clubs">
+   <h2 class="text-3xl font-bold mb-4">
+    Popular Tech Clubs!
+   </h2>
+   <p class="text-lg mb-8">Go With The Flow , Grow With The TECH.</p>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="bg-gray-100 p-4 rounded-lg text-center">
+     <img alt="IEEE Club Logo" class="mx-auto mb-8" src="pics/IEEE-Logo.jpg"/>
+     <h3 class="text-xl font-semibold">
+      IEEE
+     </h3>
+     <button class="mt-2 bg-orange-500 text-white py-2 px-4 rounded">
+      Join Now
+     </button>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg text-center">
+     <img alt="Cloud Clubs Logo" class="mx-auto mb-4" src="pics/aws logo.jpeg"/>
+     <h3 class="text-xl font-semibold">
+      AWS Cloud Clubs
+     </h3>
+     <button class="mt-2 bg-orange-500 text-white py-2 px-4 rounded">
+      Join Now
+     </button>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg text-center">
+     <img alt="Google Developer Club Logo" class="mx-auto mb-12"  src="pics/gdg logo.png">
+     <h3 class="text-xl font-semibold">
+      Google Developer Group
+     </h3>
+     <button class="mt-2 bg-orange-500 text-white py-2 px-4 rounded">
+      Join Now
+     </button>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg text-center">
+     <img alt="Other Club Logo" class="mx-auto mb-4" src="pics/stic.jpeg"/>
+     <h3 class="text-xl font-semibold">
+      STIC
+     </h3>
+     <button class="mt-2 bg-orange-500 text-white py-2 px-4 rounded">
+      Join Now
+     </button>
+    </div>
+   </div>
+  </section>
+  <section class="px-4 py-8 flex flex-col md:flex-row items-center">
+   <div class="md:w-1/2">
+    <img alt="Illustration of people climbing a graph" class="mx-auto" src="path/to/your/image.png"/>
+   </div>
+   <div class="md:w-1/2 mt-8 md:mt-0 md:pl-8">
+    <h2 class="text-3xl font-bold mb-4">
+     Why Techno Club ?
+    </h2>
+    <p class="mb-8">
+     Enjoy different experiences in every place you visit. Discover new and affordable adventure course and learn with the best community of experts.
+    </p>
+    <ul class="space-y-4">
+     <li class="flex items-start">
+      <i class="fas fa-check-circle text-green-500 mr-2">
+      </i>
+      <div>
+       <h3 class="font-semibold">
+        Learn &amp; Implement
+       </h3>
+       <p>
+        Work on real-world projects, Participate in hackathons, and learn cutting-edge tech skills through hands-on workshops.
+       </p>
+      </div>
+     </li>
+     <li class="flex items-start">
+      <i class="fas fa-check-circle text-green-500 mr-2">
+      </i>
+      <div>
+       <h3 class="font-semibold">
+        Career Acceleration
+       </h3>
+       <p>
+        Boost your career with resume-building projects, coding competitions, and exclusive Networking opportunities with industry experts.
+       </p>
+      </div>
+     </li>
+     <li class="flex items-start">
+      <i class="fas fa-check-circle text-green-500 mr-2">
+      </i>
+      <div>
+       <h3 class="font-semibold">
+        TechFests &amp; Showcases
+       </h3>
+       <p>
+       Compete and exhibit your talent in our annual Tech Fests, startup showcases and innovation challenges.
+       </p>
+      </div>
+     </li>
+     <li class="flex items-start">
+      <i class="fas fa-check-circle text-green-500 mr-2">
+      </i>
+      <div>
+       <h3 class="font-semibold">
+        Mentorship &amp; Industry Exposure
+       </h3>
+       <p>
+        Get guidance from industry experts, mentors, and alumni to help you grow and succeed in your career.And connect with professionals, and gain insights into the latest industry trends.
+       </p>
+      </div>
+     </li>
+    </ul>
+   </div>
+  </section>
+ 
+  <section id="calendar" class="calendar-section">
+    <h2 class="text-3xl font-bold mb-3">
+      Live Calendar
+     </h2>
+     <div class="calendar-main">
+    
+      <!-- Calendar Picker -->
+      <div class="calendar-left">
+        <label for="event-date">Choose Date</label>
+        <input type="date" id="event-date">
+      </div>
+
+       <!-- Horizontal Events + Scroll -->
+    <div class="calendar-right">
+        <div class="events-container" id="events-container">
+          <div class="event-card" data-date="2025-03-21">
+            <h4><strong>21th March</h4></strong>
+            <ul>
+              <li>Cricket (Moonstone)</li>
+              <li>Zuper Content Carnival</li>
+            </ul>
+          </div>
+          <div class="event-card" data-date="2025-03-22">
+            <h4><strong>22nd March</h4></strong>
+            <ul>
+              <li>Moonhack</li>
+              <li>Minisoccer (Moonstone)</li>
+            </ul>
+          </div>
+          <div class="event-card" data-date="2025-03-24">
+            <h4><strong>24th March</h4></strong>
+            <ul>
+              <li>Shooting (Moonstone)</li>
+              <li>Carrom (Moonstone)</li>
+              <li>Gully Cricket (Moonstone)</li>
+              <li>Table Tennis (Moonstone)</li>
+              <li>Chess (Moonstone)</li>
+              <li>Badminton (Moonstone)</li>
+              <li>Volleyball (Moonstone)</li>
+            </ul>
+          </div>
+          <div class="event-card" data-date="2025-03-25">
+            <h4><strong>25th March</h4></strong>
+            <ul>
+              <li>Basketball (Moonstone)</li>
+              <li>Kabaddi (Moonstone)</li>
+              <li>Chakravyuh</li>
+            </ul>
+          </div>
+          <div class="event-card" data-date="2025-03-27">
+            <h4><strong>27th March</h4></strong>
+            <ul>
+              <li>Tech Roadies</li>
+            </ul>
+          </div>
+          <div class="event-card" data-date="2025-07-05">
+            <h4><strong>5th July</h4></strong>
+            <ul>
+              <li>AI Workshop</li>
+            </ul>
+          </div>
+          <div class="event-card" data-date="2025-07-10">
+            <h4><strong>10th July</h4></strong>
+            <ul>
+              <li>Tech Robotics</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </section>
+  
+  <section class="px-10 py-10">
+   <h2 class="text-2xl font-bold mb-4">
+    Reviews
+   </h2>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="bg-gray-100 p-4 rounded-lg">
+     <h3 class="text-xl font-semibold">
+      Review 1
+     </h3>
+     <p class="mt-2">
+      Details about review 1
+     </p>
+     <div class="mt-2">
+      <i class="fas fa-star text-B17F59">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+     </div>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg">
+     <h3 class="text-xl font-semibold">
+      Review 2
+     </h3>
+     <p class="mt-2">
+      Details about review 2
+     </p>
+     <div class="mt-2">
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+     </div>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg">
+     <h3 class="text-xl font-semibold">
+      Review 3
+     </h3>
+     <p class="mt-2">
+      Details about review 3
+     </p>
+     <div class="mt-2">
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+      <i class="fas fa-star text-yellow-500">
+      </i>
+     </div>
+    </div>
+   </div>
+  </section>
+  
+  <!-- Include Font Awesome CDN in <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<footer class="footer">
+
+  <div class="social-icons" style="display: flex; gap: 20px; align-items: center;">
+    <a href="https://twitter.com/login" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X (Twitter)" width="24" />
+    </a>
+    <a href="https://www.instagram.com/accounts/login/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="24" />
+    </a>
+    <a href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="24" />
+    </a>
+    <a href="https://www.linkedin.com/login" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" width="24" />
+    </a>
+  </div>
+
+  <div class="footer-links">
+    <div>
+      <h4 class="text-xl font-semibold">Clubs </h4>
+      <ul>
+        <li>Culural Clubs</li>
+        <li>Maths Club</li>
+        <li>Photography Club</li>
+        <li>Science Club</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-xl font-semibold">Explore</h4>
+      <ul>
+        <li>Design</li>
+        <li>Prototyping</li>
+        <li>Development Features</li>
+        <li>Design Systems</li>
+        <li>Collaboration Features</li>
+        <li>Design Process</li>
+        <li>FigJam</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-xl font-semibold">Resources</h4>
+      <ul>
+        <li>Blog</li>
+        <li>Best Practices</li>
+        <li>Colors</li>
+        <li>Color Wheel</li>
+        <li>Support</li>
+        <li>Developers</li>
+        <li>Resource Library</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  // Calendar interaction code
+  document.addEventListener('DOMContentLoaded', function() {
+    const dateInput = document.getElementById('event-date');
+    const eventCards = document.querySelectorAll('[data-date]');
+    
+    // Function to highlight events for selected date
+    function highlightEvents(selectedDate) {
+      eventCards.forEach(card => {
+        if (card.dataset.date === selectedDate) {
+          card.style.border = '2px solid #f97316'; // Orange border
+          card.style.transform = 'scale(1.02)';
+        } else {
+          card.style.border = 'none';
+          card.style.transform = 'scale(1)';
+        }
+      });
+    }
+
+    // Handle date input change
+    dateInput.addEventListener('change', function(e) {
+      const selectedDate = e.target.value;
+      highlightEvents(selectedDate);
+    });
+
+    // Add hover effect to event cards
+    eventCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        const date = this.dataset.date;
+        highlightEvents(date);
+        dateInput.value = date;
+      });
+
+      card.addEventListener('mouseleave', function() {
+        eventCards.forEach(c => {
+          c.style.border = 'none';
+          c.style.transform = 'scale(1)';
+        });
+        dateInput.value = '';
+      });
+    });
+  });
+
+  // Voiceflow chat widget code
+  (function(d, t) {
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    v.onload = function() {
+      window.voiceflow.chat.load({
+        verify: { projectID: '67de48756cef5247fa18f47d' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production',
+        voice: {
+          url: "https://runtime-api.voiceflow.com"
+        }
+      });
+    }
+    v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+ </body>
+</html>

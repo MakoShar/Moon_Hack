@@ -1,0 +1,123 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="dashboard_css.css">
+    <script src="dashboard.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex flex-col h-screen">
+        <!-- Header -->
+        <div class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-bars text-xl text-gray-600 cursor-pointer"></i>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">MediTech</span>
+                </div>
+                <button class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all">JOIN US</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex flex-1 container mx-auto px-4 py-6 gap-6">
+            <!-- Sidebar -->
+            <div class="w-1/4 space-y-6">
+                <!-- Profile Card -->
+                <div class="bg-white rounded-xl shadow-sm p-4">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-circle text-2xl text-gray-600"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Student Name</div>
+                            <div class="text-sm text-gray-500">EN: 0832CS221160</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="text-sm text-gray-500">Status: <span class="text-green-500">Active</span></div>
+                        <button id="notification-bell" class="relative">
+                            <i class="fas fa-bell text-gray-600"></i>
+                            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">3</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-xl shadow-sm p-4 space-y-3">
+                    <h3 class="font-semibold text-gray-700 mb-4">Quick Actions</h3>
+                    <button class="w-full bg-gray-50 hover:bg-gray-100 p-3 rounded-lg text-left flex items-center justify-between transition-colors">
+                        <span class="flex items-center"><i class="fas fa-trophy text-yellow-500 mr-3"></i>Achievements</span>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </button>
+                    <button class="w-full bg-gray-50 hover:bg-gray-100 p-3 rounded-lg text-left flex items-center justify-between transition-colors">
+                        <span class="flex items-center"><i class="fas fa-calendar-check text-blue-500 mr-3"></i>Event Tracking</span>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </button>
+                    <button class="w-full bg-gray-50 hover:bg-gray-100 p-3 rounded-lg text-left flex items-center justify-between transition-colors">
+                        <span class="flex items-center"><i class="fas fa-star text-purple-500 mr-3"></i>Credits</span>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </button>
+                </div>
+
+                <!-- Calendar Widget -->
+                <div class="bg-white rounded-xl shadow-sm p-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-semibold text-gray-700">Calendar</h3>
+                        <div class="flex space-x-2">
+                            <button class="p-1 hover:bg-gray-100 rounded"><i class="fas fa-chevron-left"></i></button>
+                            <button class="p-1 hover:bg-gray-100 rounded"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <!-- Calendar grid here -->
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="flex-1">
+                <div class="grid grid-cols-3 gap-6">
+                    <!-- Club Cards -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center space-y-4 hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-comments text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold">CHAT FORUM</h3>
+                        <a href="chat.html" class="text-blue-600 hover:text-blue-700">View Details →</a>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center space-y-4 hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center">
+                            <i class="fab fa-google text-orange-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold">GDG</h3>
+                        <a href="gdg.html" class="text-orange-600 hover:text-orange-700">View Details →</a>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center space-y-4 hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-code text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold">STIC</h3>
+                        <a href="chat.html" class="text-green-600 hover:text-green-700">View Details →</a>
+                    </div>
+
+                    <div class="col-span-2 bg-white rounded-xl shadow-sm p-6 flex flex-col items-center space-y-4 hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <i class="fab fa-aws text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold">AWS</h3>
+                        <a href="chat.html" class="text-yellow-600 hover:text-yellow-700">View Details →</a>
+                    </div>
+
+                    <div class="col-span-1 bg-white rounded-xl shadow-sm p-6 flex flex-col items-center space-y-4 hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold">ACM</h3>
+                        <a href="chat.html" class="text-purple-600 hover:text-purple-700">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

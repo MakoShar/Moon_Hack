@@ -1,0 +1,19 @@
+/* Add these styles to dashboard_css.css */
+.rounded-3xl:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific styles for GDG section */
+.gdg-section {
+    background: linear-gradient(to bottom right, #4285f4, #34a853, #fbbc04, #ea4335);
+    background-size: 200% 200%;
+    animation: gradientBG 5s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} 
