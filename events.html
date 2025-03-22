@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTech - Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet"/>
+    <link href="event.css" rel="stylesheet"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Check if user is logged in
+        const token = localStorage.getItem('token');
+        const userRole = localStorage.getItem('userRole');
+        
+        // If not logged in, redirect to login
+        if (!token || !userRole) {
+            window.location.href = './Login.html';
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userRole');
+            window.location.href = './index.html';
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800">
+    <nav class="bg-blue-50 w-full">
+        <div class="max-w-full flex justify-between items-center px-4 py-3">
+            <div class="flex items-center gap-2">
+                <button type="button" onclick="toggleMenu()" aria-label="Toggle menu">
+                    <i class="fas fa-bars text-gray-800 text-2xl"></i>
+                </button>
+                <a href="./index.html" class="text-cyan-500 font-bold text-2xl">MediTech</a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="./index.html" class="text-gray-800 hover:text-orange-500 transition-colors">Home</a>
+                <a href="./member-dashboard.html" class="text-gray-800 hover:text-orange-500 transition-colors">Clubs</a>
+                <a href="./events.html" class="text-gray-800 hover:text-orange-500 transition-colors active">Events</a>
+                <a href="./calendar.html" class="text-gray-800 hover:text-orange-500 transition-colors">Calendar</a>
+                <a href="./chat.html" class="text-gray-800 hover:text-orange-500 transition-colors">Chat</a>
+                <button type="button" onclick="logout()" class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors">
+                    Logout
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-4 py-2">
+                <a href="./index.html" class="block text-gray-800 hover:text-orange-500 transition-colors mb-2">Home</a>
+                <a href="./member-dashboard.html" class="block text-gray-800 hover:text-orange-500 transition-colors mb-2">Clubs</a>
+                <a href="./events.html" class="block text-gray-800 hover:text-orange-500 transition-colors mb-2 active">Events</a>
+                <a href="./calendar.html" class="block text-gray-800 hover:text-orange-500 transition-colors mb-2">Calendar</a>
+                <a href="./chat.html" class="block text-gray-800 hover:text-orange-500 transition-colors mb-2">Chat</a>
+                <button type="button" onclick="logout()" class="block w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition-colors mt-4 text-center">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="events-section">
+        <h2 class="events-heading">Upcoming Events</h2>
+        <p class="events-description">Make your experience enjoyable with Techno Clubs!</p>
+        <div class="events-grid">
+            <div class="event-card" data-date="2025-03-25">
+                <img alt="Event 1 Image" class="event-image" src="https://placehold.co/100x100"/>
+                <h3 class="event-title">Chakravyuh</h3>
+                <p class="event-date">Date: 25th June</p>
+                <button type="button" class="register-button">Register</button>
+            </div>
+            <div class="event-card" data-date="2025-03-27">
+                <img alt="Event 2 Image" class="event-image" src="https://placehold.co/100x100"/>
+                <h3 class="event-title">Tech Roadies</h3>
+                <p class="event-date">Date: 27th March</p>
+                <button type="button" class="register-button">Register</button>
+            </div>
+            <div class="event-card" data-date="2025-07-05">
+                <img alt="Event 3 Image" class="event-image" src="https://placehold.co/100x100"/>
+                <h3 class="event-title">AI Workshop</h3>
+                <p class="event-date">Date: 5th July</p>
+                <button type="button" class="register-button">Register</button>
+            </div>
+            <div class="event-card" data-date="2025-07-10">
+                <img alt="Event 4 Image" class="event-image" src="https://placehold.co/100x100"/>
+                <h3 class="event-title">Tech Robotics</h3>
+                <p class="event-date">Date: 10th July</p>
+                <button type="button" class="register-button">Register</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="calendar" class="calendar-section">
+        <h2 class="calendar-heading">Live Calendar</h2>
+        <div class="calendar-main">
+            <!-- Calendar Picker -->
+            <div class="calendar-left">
+                <label for="event-date">Choose Date</label>
+                <input type="date" id="event-date">
+            </div>
+
+            <!-- Horizontal Events + Scroll -->
+            <div class="calendar-right">
+                <div class="events-container" id="events-container">
+                    <div class="event-card" data-date="2025-03-21">
+                        <h4><strong>21th March</h4></strong>
+                        <ul>
+                            <li>Cricket (Moonstone)</li>
+                            <li>Zuper Content Carnival</li>
+                        </ul>
+                    </div>
+                    <div class="event-card" data-date="2025-03-22">
+                        <h4><strong>22nd March</h4></strong>
+                        <ul>
+                            <li>Moonhack</li>
+                            <li>Minisoccer (Moonstone)</li>
+                        </ul>
+                    </div>
+                    <div class="event-card" data-date="2025-03-24">
+                        <h4><strong>24th March</h4></strong>
+                        <ul>
+                            <li>Shooting (Moonstone)</li>
+                            <li>Carrom (Moonstone)</li>
+                            <li>Gully Cricket (Moonstone)</li>
+                            <li>Table Tennis (Moonstone)</li>
+                            <li>Chess (Moonstone)</li>
+                            <li>Badminton (Moonstone)</li>
+                            <li>Volleyball (Moonstone)</li>
+                        </ul>
+                    </div>
+                    <div class="event-card" data-date="2025-03-25">
+                        <h4><strong>25th March</h4></strong>
+                        <ul>
+                            <li>Basketball (Moonstone)</li>
+                            <li>Kabaddi (Moonstone)</li>
+                            <li>Chakravyuh</li>
+                        </ul>
+                    </div>
+                    <div class="event-card" data-date="2025-03-27">
+                        <h4><strong>27th March</h4></strong>
+                        <ul>
+                            <li>Tech Roadies</li>
+                        </ul>
+                    </div>
+                    <div class="event-card" data-date="2025-07-05">
+                        <h4><strong>5th July</h4></strong>
+                        <ul>
+                            <li>AI Workshop</li>
+                        </ul>
+                    </div>
+                    <div class="event-card" data-date="2025-07-10">
+                        <h4><strong>10th July</h4></strong>
+                        <ul>
+                            <li>Tech Robotics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Calendar interaction code
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('event-date');
+            const eventCards = document.querySelectorAll('[data-date]');
+            
+            function highlightEvents(selectedDate) {
+                eventCards.forEach(card => {
+                    if (card.dataset.date === selectedDate) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+            }
+
+            dateInput.addEventListener('change', function(e) {
+                const selectedDate = e.target.value;
+                highlightEvents(selectedDate);
+            });
+
+            eventCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const date = this.dataset.date;
+                    highlightEvents(date);
+                    dateInput.value = date;
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    eventCards.forEach(c => {
+                        c.classList.remove('active');
+                    });
+                    dateInput.value = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Workshop - Event Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span>MediTech</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="events.html" class="nav-link active">Events</a>
+                <a href="clubs.html" class="nav-link">Clubs</a>
+                <a href="calendar.html" class="nav-link">Calendar</a>
+                <a href="student-dashboard.html" class="nav-link">Student Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 mt-20">
+        <div class="max-w-4xl mx-auto">
+            <!-- Event Header -->
+            <div class="flex flex-col md:flex-row gap-8 mb-12">
+                <div class="md:w-1/2">
+                    <img src="pics/acm.jpg" alt="AI Workshop Event" class="w-full h-80 object-cover rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl font-bold text-[#2D3748] mb-4">AI Workshop</h1>
+                    <div class="mb-4">
+                        <p class="text-gray-600"><i class="far fa-calendar mr-2"></i>Date: 5th July, 2025</p>
+                        <p class="text-gray-600"><i class="far fa-clock mr-2"></i>Time: 10:00 AM - 6:00 PM</p>
+                        <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i>Venue: AI Lab</p>
+                    </div>
+                    <p class="text-gray-700 mb-6">Join us for an intensive one-day workshop on Artificial Intelligence and Machine Learning. Learn from industry experts and get hands-on experience with real-world projects.</p>
+                    <div class="bg-orange-100 p-4 rounded-lg mb-6">
+                        <h3 class="font-semibold text-orange-800">Workshop Fee</h3>
+                        <p class="text-orange-700">₹500 per participant (includes lunch and materials)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workshop Details -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div>
+                    <h2 class="text-2xl font-bold text-[#2D3748] mb-4">Workshop Contents</h2>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Introduction to AI & ML</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Python for Machine Learning</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Deep Learning Fundamentals</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Neural Networks</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Hands-on Projects</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-[#2D3748] mb-4">Requirements</h2>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-dot-circle text-orange-500 mr-2"></i>Basic Python knowledge</li>
+                        <li><i class="fas fa-dot-circle text-orange-500 mr-2"></i>Laptop with min. 8GB RAM</li>
+                        <li><i class="fas fa-dot-circle text-orange-500 mr-2"></i>Valid college ID</li>
+                        <li><i class="fas fa-dot-circle text-orange-500 mr-2"></i>Interest in AI/ML</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-[#2D3748] mb-6">Register for AI Workshop</h2>
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="full_name">Full Name</label>
+                            <input type="text" id="full_name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="college">College Name</label>
+                            <input type="text" id="college" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="email">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="experience">Programming Experience</label>
+                        <textarea id="experience" rows="3" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Tell us about your programming experience and why you want to join this workshop" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-[#F26B3C] text-white py-3 px-6 rounded-md hover:bg-[#E85A2B] transition-colors">
+                        Register Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-16">
+        <div class="social-icons">
+            <a href="https://twitter.com/login" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X (Twitter)" width="24" />
+            </a>
+            <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="24" />
+            </a>
+            <a href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="24" />
+            </a>
+            <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" width="24" />
+            </a>
+        </div>
+    </footer>
+
+    <!-- Voiceflow Chat Widget -->
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '67de48756cef5247fa18f47d' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',
+              voice: {
+                url: "https://runtime-api.voiceflow.com"
+              }
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+</body>
+</html> 

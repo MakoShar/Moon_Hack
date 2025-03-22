@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTech - Techno Clubs</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Check if user is already logged in
+        const token = localStorage.getItem('token');
+        const userRole = localStorage.getItem('userRole');
+        
+        if (token && userRole) {
+            // Redirect to appropriate dashboard if logged in
+            window.location.href = userRole === 'member' ? 'member-dashboard.html' : 'dashboard.html';
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800">
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span>MediTech</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="clubs.html" class="nav-link">Clubs</a>
+                <a href="calendar.html" class="nav-link">Calendar</a>
+                <a href="dashboard.html" class="nav-link">Student Dashboard</a>
+                <div id="auth-buttons">
+                    <a href="Login.html" class="profile-button">Login</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" onclick="toggleMenu()" aria-label="Toggle menu">
+                <i class="fas fa-bars text-gray-800 text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="clubs.html" class="nav-link">Clubs</a>
+            <a href="calendar.html" class="nav-link">Calendar</a>
+            <a href="dashboard.html" class="nav-link">Student Dashboard</a>
+            <a href="Login.html" class="nav-link">Login</a>
+        </div>
+    </nav>
+
+    <section class="hero bg-blue-40" id="home">
+        <section class="hero-section flex justify-between">
+            <div class="hero-content">
+                <h1>Where Innovation<br>Meets Passion!</h1>
+                <p class="text-lg text-gray-700">Join us to innovate, collaborate, and push the boundaries of technology together. Discover a community of tech enthusiasts ready to shape the future.</p>
+            </div>
+
+            <!-- Logo Container -->
+            <div class="circle-container">
+                <img src="./pics/logo_Moon.png" alt="Techno Club Logo" class="techno-logo">
+            </div>
+        </section>        
+    </section>
+
+    <!--Upcoming events-->
+    <section class="px-10 py-10" id="events">
+        <h2 class="text-3xl font-bold text-[#2D3748] mb-3">Upcoming Events</h2>
+        <p class="text-gray-600 mb-12">Make your experience enjoyable with Techno Clubs!</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center" data-date="2025-03-25">
+                <img alt="Chakravyuh Event" class="mx-auto mb-6 w-24 h-24 object-cover" src="pics/Chakravyuh.jpg"/>
+                <h3 class="text-xl font-semibold text-[#2D3748] mb-2">Chakravyuh</h3>
+                <p class="text-gray-600 mb-4">Date: 25th June</p>
+                <a href="chakravyuh.html" class="inline-block bg-[#F26B3C] text-white py-2 px-8 rounded-md hover:bg-[#E85A2B] transition-colors">Register</a>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center" data-date="2025-03-27">
+                <img alt="Tech Roadies Event" class="mx-auto mb-6 w-24 h-24 object-cover" src="pics/Tech_Roadies.jpg"/>
+                <h3 class="text-xl font-semibold text-[#2D3748] mb-2">Tech Roadies</h3>
+                <p class="text-gray-600 mb-4">Date: 27th March</p>
+                <a href="tech-roadies.html" class="inline-block bg-[#F26B3C] text-white py-2 px-8 rounded-md hover:bg-[#E85A2B] transition-colors">Register</a>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center" data-date="2025-07-05">
+                <img alt="AI Workshop" class="mx-auto mb-6 w-24 h-24 object-cover" src="pics/acm.jpg"/>
+                <h3 class="text-xl font-semibold text-[#2D3748] mb-2">AI Workshop</h3>
+                <p class="text-gray-600 mb-4">Date: 5th July</p>
+                <a href="ai-workshop.html" class="inline-block bg-[#F26B3C] text-white py-2 px-8 rounded-md hover:bg-[#E85A2B] transition-colors">Register</a>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center" data-date="2025-07-10">
+                <img alt="Tech Robotics" class="mx-auto mb-6 w-24 h-24 object-cover" src="pics/stic.jpg"/>
+                <h3 class="text-xl font-semibold text-[#2D3748] mb-2">Tech Robotics</h3>
+                <p class="text-gray-600 mb-4">Date: 10th July</p>
+                <a href="tech-robotics.html" class="inline-block bg-[#F26B3C] text-white py-2 px-8 rounded-md hover:bg-[#E85A2B] transition-colors">Register</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-10 py-10" id="popular-clubs">
+        <h2 class="text-3xl font-bold mb-4">Popular Tech Clubs!</h2>
+        <p class="text-lg mb-8">Go With The Flow , Grow With The TECH.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-gray-100 p-4 rounded-lg text-center">
+                <img alt="IEEE Club Logo" class="mx-auto mb-8" src="pics/IEEE-Logo.jpg"/>
+                <h3 class="text-xl font-semibold">IEEE</h3>
+                <a href="ieee.html" class="mt-2 bg-orange-500 text-white py-2 px-4 rounded inline-block hover:bg-orange-600 transition-colors">Join Now</a>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center">
+                <img alt="Cloud Clubs Logo" class="mx-auto mb-4" src="pics/aws logo.jpg"/>
+                <h3 class="text-xl font-semibold">AWS Cloud Clubs</h3>
+                <a href="aws.html" class="mt-2 bg-orange-500 text-white py-2 px-4 rounded inline-block hover:bg-orange-600 transition-colors">Join Now</a>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center">
+                <img alt="Google Developer Club Logo" class="mx-auto mb-12" src="pics/gdg logo.jpg"/>
+                <h3 class="text-xl font-semibold">Google Developer Group</h3>
+                <a href="gdg.html" class="mt-2 bg-orange-500 text-white py-2 px-4 rounded inline-block hover:bg-orange-600 transition-colors">Join Now</a>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg text-center">
+                <img alt="Other Club Logo" class="mx-auto mb-4" src="pics/stic.jpg"/>
+                <h3 class="text-xl font-semibold">STIC</h3>
+                <a href="stic.html" class="mt-2 bg-orange-500 text-white py-2 px-4 rounded inline-block hover:bg-orange-600 transition-colors">Join Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-4 py-8 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2">
+            <img alt="Students collaborating on tech projects" class="mx-auto w-full h-[400px] object-cover object-center rounded-lg shadow-lg" src="pics/YYYYY.jpg"/>
+        </div>
+        <div class="md:w-1/2 mt-8 md:mt-0 md:pl-8">
+            <h2 class="text-3xl font-bold mb-4">Why Techno Club?</h2>
+            <p class="mb-8">Enjoy different experiences in every place you visit. Discover new and affordable adventure course and learn with the best community of experts.</p>
+            <ul class="space-y-4">
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    <div>
+                        <h3 class="font-semibold">Learn & Implement</h3>
+                        <p>Work on real-world projects, Participate in hackathons, and learn cutting-edge tech skills through hands-on workshops.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    <div>
+                        <h3 class="font-semibold">Career Acceleration</h3>
+                        <p>Boost your career with resume-building projects, coding competitions, and exclusive Networking opportunities with industry experts.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    <div>
+                        <h3 class="font-semibold">TechFests & Showcases</h3>
+                        <p>Compete and exhibit your talent in our annual Tech Fests, startup showcases and innovation challenges.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    <div>
+                        <h3 class="font-semibold">Mentorship & Industry Exposure</h3>
+                        <p>Get guidance from industry experts, mentors, and alumni to help you grow and succeed in your career.And connect with professionals, and gain insights into the latest industry trends.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="px-10 py-10">
+        <h2 class="text-2xl font-bold mb-4">Reviews</h2>
+        <h3 class="text-lg mb-6">Latest reviews</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Media Carnival Review -->
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <div class="flex items-center gap-1 mb-2">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-gray-300"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Media Carnival</h3>
+                <p class="text-gray-600 mb-4">The event was a perfect blend of learning and fun. The speakers were insightful, and the performances were top-notch. The organizing team did a fantastic managing everything smoothly. Definitely looking forward to more such events!</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gray-300"></div>
+                    <div>
+                        <p class="font-medium">Radhika</p>
+                        <p class="text-sm text-gray-500">22-02-2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detective Game Review -->
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <div class="flex items-center gap-1 mb-2">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-gray-300"></i>
+                    <i class="fas fa-star text-gray-300"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Detective Game</h3>
+                <p class="text-gray-600 mb-4">From the decorations to the event schedule, everything was well-planned. The interactive sessions kept the audience engaged, and the enthusiasm of the participants made it even more special. Kudos to the organizers!</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gray-300"></div>
+                    <div>
+                        <p class="font-medium">Abil</p>
+                        <p class="text-sm text-gray-500">14-03-2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geet Gate Chaloo Review -->
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <div class="flex items-center gap-1 mb-2">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Geet Gate Chaloo</h3>
+                <p class="text-gray-600 mb-4">The performances were outstanding, and the crowd was full of energy. The cultural and tech events added great variety. It was a fantastic way to break from academics and enjoy with friends!</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gray-300"></div>
+                    <div>
+                        <p class="font-medium">Aagam</p>
+                        <p class="text-sm text-gray-500">17-02-2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://twitter.com/login" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X (Twitter)" width="24" />
+            </a>
+            <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="24" />
+            </a>
+            <a href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="24" />
+            </a>
+            <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" width="24" />
+            </a>
+        </div>
+
+        <div class="footer-links">
+            <div>
+                <h4 class="text-xl font-semibold">Clubs</h4>
+                <ul>
+                    <li>Cultural Clubs</li>
+                    <li>Maths Club</li>
+                    <li>Photography Club</li>
+                    <li>Science Club</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold">Explore</h4>
+                <ul>
+                    <li>Design</li>
+                    <li>Prototyping</li>
+                    <li>Development Features</li>
+                    <li>Design Systems</li>
+                    <li>Collaboration Features</li>
+                    <li>Design Process</li>
+                    <li>FigJam</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold">Resources</h4>
+                <ul>
+                    <li>Blog</li>
+                    <li>Best Practices</li>
+                    <li>Colors</li>
+                    <li>Color Wheel</li>
+                    <li>Support</li>
+                    <li>Developers</li>
+                    <li>Resource Library</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Voiceflow Chat Widget -->
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '67de48756cef5247fa18f47d' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',
+              voice: {
+                url: "https://runtime-api.voiceflow.com"
+              }
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+</body>
+</html> 

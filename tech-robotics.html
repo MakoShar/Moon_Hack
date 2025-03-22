@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Robotics - Event Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span>MediTech</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="events.html" class="nav-link active">Events</a>
+                <a href="clubs.html" class="nav-link">Clubs</a>
+                <a href="calendar.html" class="nav-link">Calendar</a>
+                <a href="chat.html" class="nav-link">Student Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 mt-20">
+        <div class="max-w-4xl mx-auto">
+            <!-- Event Header -->
+            <div class="flex flex-col md:flex-row gap-8 mb-12">
+                <div class="md:w-1/2">
+                    <img src="pics/stic.jpg" alt="Tech Robotics Event" class="w-full h-80 object-cover rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl font-bold text-[#2D3748] mb-4">Tech Robotics</h1>
+                    <div class="mb-4">
+                        <p class="text-gray-600"><i class="far fa-calendar mr-2"></i>Date: 10th July, 2025</p>
+                        <p class="text-gray-600"><i class="far fa-clock mr-2"></i>Time: 9:00 AM - 5:00 PM</p>
+                        <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i>Venue: Robotics Lab</p>
+                    </div>
+                    <p class="text-gray-700 mb-6">Get hands-on experience with robotics technology and learn about the latest advancements in automation and control systems.</p>
+                    <div class="bg-orange-100 p-4 rounded-lg mb-6">
+                        <h3 class="font-semibold text-orange-800">Workshop Fee</h3>
+                        <p class="text-orange-700">₹750 per team (2-4 members)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Details -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div>
+                    <h2 class="text-2xl font-bold text-[#2D3748] mb-4">Workshop Contents</h2>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Introduction to Robotics</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Arduino Programming</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Sensor Integration</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Robot Building Session</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Competition Round</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-[#2D3748] mb-4">Requirements</h2>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-dot-circle text-orange-500 mr-2"></i>Basic electronics knowledge</li>
+                        <li><i class="fas fa-dot-circle text-orange-500 mr-2"></i>Laptop with Arduino IDE</li>
+                        <li><i class="fas fa-dot-circle text-orange-500 mr-2"></i>Team of 2-4 members</li>
+                        <li><i class="fas fa-dot-circle text-orange-500 mr-2"></i>Safety equipment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-[#2D3748] mb-6">Register for Tech Robotics</h2>
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="team_name">Team Name</label>
+                            <input type="text" id="team_name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="college">College Name</label>
+                            <input type="text" id="college" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="email">Team Leader Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="phone">Team Leader Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Team Members</label>
+                        <div class="space-y-4">
+                            <input type="text" placeholder="Member 1 (Team Leader)" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                            <input type="text" placeholder="Member 2" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                            <input type="text" placeholder="Member 3 (Optional)" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <input type="text" placeholder="Member 4 (Optional)" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="experience">Team Experience</label>
+                        <textarea id="experience" rows="3" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Describe your team's experience with robotics and electronics" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-[#F26B3C] text-white py-3 px-6 rounded-md hover:bg-[#E85A2B] transition-colors">
+                        Register Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-16">
+        <div class="social-icons">
+            <a href="https://twitter.com/login" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X (Twitter)" width="24" />
+            </a>
+            <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="24" />
+            </a>
+            <a href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="24" />
+            </a>
+            <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" width="24" />
+            </a>
+        </div>
+    </footer>
+
+    <!-- Voiceflow Chat Widget -->
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '67de48756cef5247fa18f47d' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',
+              voice: {
+                url: "https://runtime-api.voiceflow.com"
+              }
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+</body>
+</html> 

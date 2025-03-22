@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTech - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js"></script>
+    <script>
+        // Check if user is logged in
+        const token = localStorage.getItem('token');
+        const userRole = localStorage.getItem('userRole');
+        
+        if (!token || !userRole || userRole !== 'manager') {
+            window.location.href = 'Login.html';
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userRole');
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800">
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span>MediTech</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="clubs.html" class="nav-link">Clubs</a>
+                <a href="calendar.html" class="nav-link">Calendar</a>
+                <a href="chat.html" class="nav-link">Chat</a>
+                <div id="auth-buttons">
+                    <!-- Will be populated by script.js -->
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" onclick="toggleMenu()" aria-label="Toggle menu">
+                <i class="fas fa-bars text-gray-800 text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="clubs.html" class="nav-link">Clubs</a>
+            <a href="calendar.html" class="nav-link">Calendar</a>
+            <a href="chat.html" class="nav-link">Chat</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8">Dashboard</h1>
+        
+        <!-- Dashboard Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Upcoming Events Card -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Upcoming Events</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-medium">Chakravyuh</h3>
+                            <p class="text-sm text-gray-600">25th June</p>
+                        </div>
+                        <button class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">Register</button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-medium">Tech Roadies</h3>
+                            <p class="text-sm text-gray-600">27th March</p>
+                        </div>
+                        <button class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Clubs Card -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">My Clubs</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <img src="pics/IEEE-Logo.jpg" alt="IEEE" class="w-12 h-12 rounded">
+                        <div>
+                            <h3 class="font-medium">IEEE</h3>
+                            <p class="text-sm text-gray-600">Active Member</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <img src="pics/aws logo.jpg" alt="AWS" class="w-12 h-12 rounded">
+                        <div>
+                            <h3 class="font-medium">AWS Cloud Clubs</h3>
+                            <p class="text-sm text-gray-600">Active Member</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity Card -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Recent Activity</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-calendar text-orange-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium">Registered for Chakravyuh</h3>
+                            <p class="text-sm text-gray-600">2 days ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-orange-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium">Joined AWS Cloud Clubs</h3>
+                            <p class="text-sm text-gray-600">1 week ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 

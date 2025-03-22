@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTech - Member Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js"></script>
+    <script>
+        // Check if user is logged in
+        const token = localStorage.getItem('token');
+        const userRole = localStorage.getItem('userRole');
+        
+        if (!token || !userRole || userRole !== 'member') {
+            window.location.href = './Login.html';
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userRole');
+            window.location.href = './index.html';
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800">
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="./index.html" class="nav-logo">
+                <span>MediTech</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="nav-menu">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./events.html" class="nav-link">Events</a>
+                <a href="./member-dashboard.html" class="nav-link active">Clubs</a>
+                <a href="./calendar.html" class="nav-link">Calendar</a>
+                <a href="./chat.html" class="nav-link">Chat</a>
+                <button onclick="logout()" class="auth-button">Logout</button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" onclick="toggleMenu()" aria-label="Toggle menu">
+                <i class="fas fa-bars text-gray-800 text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="./index.html" class="nav-link">Home</a>
+            <a href="./events.html" class="nav-link">Events</a>
+            <a href="./member-dashboard.html" class="nav-link active">Clubs</a>
+            <a href="./calendar.html" class="nav-link">Calendar</a>
+            <a href="./chat.html" class="nav-link">Chat</a>
+            <button onclick="logout()" class="auth-button mobile">Logout</button>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Profile Section -->
+            <div class="md:w-1/3">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="text-center mb-6">
+                        <img src="https://placehold.co/150x150" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4">
+                        <h2 class="text-2xl font-bold">Member Name</h2>
+                        <p class="text-gray-600">Member ID: #12345</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold">Email</h3>
+                            <p class="text-gray-600">member@example.com</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Credits</h3>
+                            <p class="text-gray-600">1000 credits</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Joined Clubs</h3>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>IEEE</li>
+                                <li>AWS Cloud Clubs</li>
+                                <li>Google Developer Group</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="md:w-2/3">
+                <!-- Upcoming Events -->
+                <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Upcoming Events</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="border rounded-lg p-4">
+                            <h3 class="font-semibold">Chakravyuh</h3>
+                            <p class="text-gray-600">Date: 25th June</p>
+                            <button class="mt-2 bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600 transition-colors">
+                                View Details
+                            </button>
+                        </div>
+                        <div class="border rounded-lg p-4">
+                            <h3 class="font-semibold">Tech Roadies</h3>
+                            <p class="text-gray-600">Date: 27th March</p>
+                            <button class="mt-2 bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600 transition-colors">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold mb-4">Recent Activity</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-calendar-check text-orange-500"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Registered for Chakravyuh</p>
+                                <p class="text-gray-600 text-sm">2 days ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-users text-green-500"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Joined AWS Cloud Clubs</p>
+                                <p class="text-gray-600 text-sm">1 week ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-certificate text-blue-500"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Earned Certificate in Web Development</p>
+                                <p class="text-gray-600 text-sm">2 weeks ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Voiceflow Chat Widget -->
+    <script type="text/javascript">
+        window.voiceflow.chat.load({
+            verify: { projectID: '65f9c3c3c4c0c0c0c0c0c0c0' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production'
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTech Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Check if user is logged in
+        const token = localStorage.getItem('token');
+        const userRole = localStorage.getItem('userRole');
+        
+        if (!token || !userRole) {
+            window.location.href = 'Login.html';
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userRole');
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="landing.html" class="nav-logo">
+                <span>MediTech</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="nav-menu">
+                <a href="landing.html" class="nav-link">Home</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="clubs.html" class="nav-link">Clubs</a>
+                <a href="calendar.html" class="nav-link">Calendar</a>
+                <a href="student-dashboard.html" class="nav-link">Student Dashboard</a>
+                <div id="auth-buttons">
+                    <button onclick="logout()" class="profile-button">Logout</button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" onclick="toggleMenu()" aria-label="Toggle menu">
+                <i class="fas fa-bars text-gray-800 text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="landing.html" class="nav-link">Home</a>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="clubs.html" class="nav-link">Clubs</a>
+            <a href="calendar.html" class="nav-link">Calendar</a>
+            <a href="student-dashboard.html" class="nav-link">Student Dashboard</a>
+            <button onclick="logout()" class="nav-link text-left w-full">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>MediTech</h1>
+            <div class="notification">
+                <a href="#" id="notification-bell" style="color: white; font-weight: bold; text-decoration: none; margin-right: 10px; position: relative;">
+                    <i class="fas fa-bell"></i>
+                    <span id="notification-count" class="notification-count">0</span>
+                </a>
+            </div>
+        </header>
+
+        <div id="notification-popup" class="notification-popup">
+            <span id="close-btn" class="close-btn">&times;</span>
+            <div id="notification-messages"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside>
+                <button class="chat-btn">CHAT</button>
+                <input type="text" placeholder="Search" class="search-box">
+                <div class="chat-groups">
+                    <div class="group active" data-chat="general">
+                        <div>
+                            <p class="group-title">General Chat</p>
+                            <p class="group-desc">For Everyone</p>
+                        </div>
+                        <div class="group-status">
+                            <p>Last seen 31min ago</p>
+                        </div>
+                    </div>
+                    <div class="group" data-chat="chakravyuh">
+                        <div>
+                            <p class="group-title">Chakravyuh</p>
+                            <p class="group-desc">Only Admin</p>
+                        </div>
+                        <div class="group-status">
+                            <p>Last seen 4min ago</p>
+                        </div>
+                    </div>
+                    <div class="group" data-chat="meditech">
+                        <div>
+                            <p class="group-title">MEDITECH</p>
+                            <p class="group-desc">Only Members</p>
+                        </div>
+                        <div class="group-status">
+                            <p>Last seen 31min ago</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Chat Section -->
+            <section class="chat-section">
+                <div id="general-chat" class="chat-content active">
+                    <div class="chat-header">
+                        <div class="chat-info">
+                            <img src="https://placehold.co/40x40" alt="Chat Icon">
+                            <div>
+                                <p class="chat-title">General Chat</p>
+                                <p class="chat-id">#CUB7689H</p>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="action-btn" onclick="startCall('video')" title="Start video call">
+                                <i class="fas fa-video text-blue-500"></i>
+                            </button>
+                            <button class="action-btn" onclick="showOptions()" title="Show more options">
+                                <i class="fas fa-ellipsis-v text-blue-500"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages">
+                        <div class="message received">
+                            <img src="https://placehold.co/40x40" alt="User Icon">
+                            <div>
+                                <div class="message-bubble">
+                                    <p>Hey everyone! Anyone participating in Chakravyuh?</p>
+                                </div>
+                                <p class="time">2:30 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="message sent">
+                            <div>
+                                <div class="message-bubble">
+                                    <p>Yes, I've registered with my team! Really excited about the escape room challenges.</p>
+                                </div>
+                                <p class="time">2:31 PM</p>
+                            </div>
+                            <img src="https://placehold.co/40x40" alt="User Icon">
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <img src="https://placehold.co/40x40" alt="User Icon">
+                        <input type="text" placeholder="Type your message here...">
+                        <i class="fas fa-paper-plane"></i>
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+
+                <div id="chakravyuh-chat" class="chat-content hidden">
+                    <div class="chat-header">
+                        <div class="chat-info">
+                            <img src="https://placehold.co/40x40" alt="Chakravyuh Icon">
+                            <div>
+                                <p class="chat-title">Chakravyuh</p>
+                                <p class="chat-id">#CHK2025</p>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="action-btn" onclick="startCall('video')" title="Start video call">
+                                <i class="fas fa-video text-blue-500"></i>
+                            </button>
+                            <button class="action-btn" onclick="showOptions()" title="Show more options">
+                                <i class="fas fa-ellipsis-v text-blue-500"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages">
+                        <div class="message received">
+                            <img src="https://placehold.co/40x40" alt="Admin Icon">
+                            <div>
+                                <div class="message-bubble">
+                                    <p>Welcome to Chakravyuh Official Chat! 🎮</p>
+                                    <p>Registration is now open for the escape room challenge.</p>
+                                </div>
+                                <p class="time">10:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <img src="https://placehold.co/40x40" alt="User Icon">
+                        <input type="text" placeholder="Type your message here...">
+                        <i class="fas fa-paper-plane"></i>
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+
+                <div id="meditech-chat" class="chat-content hidden">
+                    <div class="chat-header">
+                        <div class="chat-info">
+                            <img src="https://placehold.co/40x40" alt="MEDITECH Icon">
+                            <div>
+                                <p class="chat-title">MEDITECH</p>
+                                <p class="chat-id">#MED2025</p>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="action-btn" onclick="startCall('video')" title="Start video call">
+                                <i class="fas fa-video text-blue-500"></i>
+                            </button>
+                            <button class="action-btn" onclick="showOptions()" title="Show more options">
+                                <i class="fas fa-ellipsis-v text-blue-500"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages">
+                        <!-- MEDITECH specific messages will be added here -->
+                    </div>
+
+                    <div class="chat-input">
+                        <img src="https://placehold.co/40x40" alt="User Icon">
+                        <input type="text" placeholder="Type your message here...">
+                        <i class="fas fa-paper-plane"></i>
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Audio Notification Sound -->
+    <audio id="notification-sound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3" preload="auto"></audio>
+
+    <script src="chat.js"></script>
+</body>
+</html> 
